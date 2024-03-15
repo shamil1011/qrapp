@@ -1,54 +1,93 @@
 import 'package:flutter/material.dart';
+import 'package:qrapp/regsuccess.dart';
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class Reg extends StatefulWidget {
+  const Reg({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<Reg> createState() => _RegState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _RegState extends State<Reg> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Registration',
-      home: Scaffold(
-        backgroundColor: Colors.cyan,
-        body: Center(
-          child: Column(children: [
-            SizedBox(height: 200,),
-            Text('Registration',style: TextStyle(fontSize: 50,color: Colors.white),),
-            SizedBox(height: 50,),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: TextField(decoration: InputDecoration(labelText: 'Enter your name',border: OutlineInputBorder(),labelStyle: TextStyle(color: Colors.white)),),
+    return Scaffold(
+      backgroundColor: Colors.deepOrangeAccent,
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
             ),
-            SizedBox(height:5),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: TextField(decoration: InputDecoration(labelText: 'Enter your rollno',border: OutlineInputBorder(),labelStyle: TextStyle(color: Colors.white),),
+            Text(
+              'Registration',
+              style: TextStyle(fontSize: 24, color: Colors.white),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Container(
+              width: 300,
+              height: 50,
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), labelText: 'Enter your Name'),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: TextField(decoration: InputDecoration(labelText: 'Enter your Email',border: OutlineInputBorder(),labelStyle: TextStyle(color: Colors.white),),),),
-            SizedBox(height: 5,),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child:  TextField(decoration: InputDecoration(labelText: 'Enter your rollno',border: OutlineInputBorder(),labelStyle: TextStyle(color: Colors.white),),),),
-            SizedBox(height: 5,),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child:  TextField(decoration: InputDecoration(labelText: 'Enter your password',border: OutlineInputBorder(),labelStyle: TextStyle(color: Colors.white),),),),
-
-
-
-            TextButton(
-                onPressed:() {
-
-                }, child: Text('Register',style:TextStyle(color: Colors.white,),))
-          ],),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              width: 300,
+              height: 50,
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter your Roll Number'),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              width: 300,
+              height: 50,
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter your Email'),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              width: 300,
+              height: 50,
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter your Password'),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              width: 100,
+              height: 30,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                  ),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Success(),));
+                  },
+                  child: Text(
+                    'Register',
+                    style: TextStyle(color: Colors.teal, fontSize: 18),
+                  )),
+            ),
+          ],
         ),
       ),
     );
